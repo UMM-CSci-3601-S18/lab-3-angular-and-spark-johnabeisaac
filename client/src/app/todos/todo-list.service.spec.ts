@@ -1,4 +1,3 @@
-
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {TestBed} from '@angular/core/testing';
 import {HttpClient} from '@angular/common/http';
@@ -56,11 +55,11 @@ describe('Todo list service: ', () => {
   });
 
   it('getTodos() calls api/todos', () => {
-    // Assert that the users we get from this call to getUsers()
-    // should be our set of test users. Because we're subscribing
-    // to the result of getUsers(), this won't actually get
+    // Assert that the todos we get from this call to getTodos()
+    // should be our set of test todos. Because we're subscribing
+    // to the result of getTodos(), this won't actually get
     // checked until the mocked HTTP request "returns" a response.
-    // This happens when we call req.flush(testUsers) a few lines
+    // This happens when we call req.flush(testTodos) a few lines
     // down.
 
 

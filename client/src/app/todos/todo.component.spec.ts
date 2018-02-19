@@ -1,4 +1,4 @@
-/*import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Todo} from './todo';
 import {TodoComponent} from './todo.component';
 import {TodoListService} from './todo-list.service';
@@ -19,25 +19,25 @@ describe('Todo component', () => {
     todoListServiceStub = {
       getTodoById: (todoId: string) => Observable.of([
         {
-          id: 'chris_id',
-          name: 'Chris',
-          age: 25,
-          company: 'UMM',
-          email: 'chris@this.that'
+          _id: "588959856601f6a77b6a2862",
+          owner: "Fry",
+          status: false,
+          body: "Sunt esse dolore sunt Lorem velit reprehenderit incididunt minim Lorem sint Lorem sit voluptate proident. Veniam voluptate veniam aliqua ipsum cupidatat.",
+          category: "homework"
         },
         {
-          id: 'pat_id',
-          name: 'Pat',
-          age: 37,
-          company: 'IBM',
-          email: 'pat@something.com'
+          _id: "58895985847a6c1445ec4048",
+          owner: "Barry",
+          status: true,
+          body: "Deserunt velit reprehenderit deserunt sunt excepteur sit eu eiusmod in voluptate aute minim mollit. Esse aliqua esse officia do proident non consequat non mollit.",
+          category: "homework"
         },
         {
-          id: 'jamie_id',
-          name: 'Jamie',
-          age: 37,
-          company: 'Frogs, Inc.',
-          email: 'jamie@frogs.com'
+          _id: "58895985e9aaeaad6292df39",
+          owner: "Dawn",
+          status: true,
+          body: "Magna exercitation pariatur in labore. Voluptate adipisicing reprehenderit dolor veniam dolore amet duis anim nisi.",
+          category: "homework"
         }
       ].find(todo => todo.id === todoId))
     };
@@ -55,11 +55,11 @@ describe('Todo component', () => {
     });
   }));
 
-  it('can retrieve Pat by ID', () => {
-    todoComponent.setId('pat_id');
+  it('can retrieve Pat by Fry', () => {
+    todoComponent.setId('588959856601f6a77b6a2862');
     expect(todoComponent.todo).toBeDefined();
-    //expect(todoComponent.todo.name).toBe('Pat');
-   // expect(todoComponent.todo.email).toBe('pat@something.com');
+    expect(todoComponent.todo.category).toBe('Homework');
+    expect(todoComponent.todo.owner).toBe('Fry');
   });
 
   it('returns undefined for Santa', () => {
@@ -68,4 +68,4 @@ describe('Todo component', () => {
   });
 
 });
-*/
+
