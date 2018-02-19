@@ -17,8 +17,9 @@ export class TodoListComponent implements OnInit {
 
   public todoOwner: string;
   public todoBody: string;
-
-
+  public todoId: string;
+  public todoStatus: string;
+  public todoCategory: string;
   // Inject the UserListService into this component.
   // That's what happens in the following constructor.
   //
@@ -29,7 +30,7 @@ export class TodoListComponent implements OnInit {
 
   }
 
-  public filterTodos(searchOwner: string, searchBody: string): Todo[] {
+  public filterTodos(searchOwner: string, searchBody: string,searchStatus: string, searchCategory:string): Todo[] {
 
     this.filteredTodos = this.todos;
 
@@ -42,6 +43,9 @@ export class TodoListComponent implements OnInit {
       });
     }
 
+
+
+    // filter by body
     if (searchBody != null) {
       searchBody = searchBody.toLocaleLowerCase();
 
@@ -50,12 +54,40 @@ export class TodoListComponent implements OnInit {
       });
     }
 
-    // Filter by age
-   // if (searchAge != null) {
-    //  this.filteredTodos = this.filteredTodos.filter((todo: Todo) => {
-    //    return !searchAge || (todo.age === Number(searchAge));
-    //  });
-   // }
+     //Filter by status
+
+    if (searchStatus != null) {
+
+      let theStatus: boolean;
+
+      if (searchStatus === "complete") {
+        theStatus = true;
+
+      } else if (searchStatus === "incomplete") {
+        theStatus = false;
+
+      } else {
+        return this.filteredTodos;
+      }
+
+      this.filteredTodos = this.filteredTodos.filter(todo => {
+        return !searchStatus || todo.status === Boolean(theStatus);
+      });
+    }
+
+
+
+
+    //Filter by Category
+    if (searchCategory != null) {
+      searchCategory = searchCategory.toLocaleLowerCase();
+
+      this.filteredTodos = this.filteredTodos.filter(todo => {
+        return !searchCategory || todo.category.toLowerCase().indexOf(searchCategory) !== -1;
+      });
+    }
+
+
 
 
 
@@ -70,22 +102,21 @@ export class TodoListComponent implements OnInit {
    **/
 
   refreshTodos(): Observable<Todo[]> {
-    // Get Users returns an Observable, basically a "promise" that
+    // Get Todos returns an Observable, basically a "promise" that
     // we will get the data from the server.
     //
     // Subscribe waits until the data is fully downloaded, then
     // performs an action on it (the first lambda)
-
-    const todos: Observable<Todo[]> = this.todoListService.getTodos();
-    todos.subscribe(
-      returnedTodos => {
-        this.todos = returnedTodos;
-        this.filterTodos(this.todoOwner, this.todoOwner);
+    const users: Observable<Todo[]> = this.todoListService.getTodos();
+    users.subscribe(
+      returnedUsers => {
+        this.todos = returnedUsers;
+        this.filterTodos(this.todoBody, this.todoCategory,this.todoOwner,this.todoStatus);
       },
       err => {
         console.log(err);
       });
-    return todos;
+    return users;
   }
 
 
