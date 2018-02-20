@@ -9,15 +9,15 @@ import {Todo} from './todo';
 })
 export class TodoComponent implements OnInit {
   public todo: Todo = null;
-  private id: string;
+  private _id: string;
 
   constructor(private todoListService: TodoListService) {
     // this.todo = this.todoListService.getTodos();
   }
 
   private subscribeToServiceForId() {
-    if (this.id) {
-      this.todoListService.getTodoById(this.id).subscribe(
+    if (this._id) {
+      this.todoListService.getTodoById(this._id).subscribe(
         todo => this.todo = todo,
         err => {
           console.log(err);
@@ -27,7 +27,7 @@ export class TodoComponent implements OnInit {
   }
 
   setId(id: string) {
-    this.id = id;
+    this._id = id;
     this.subscribeToServiceForId();
   }
 

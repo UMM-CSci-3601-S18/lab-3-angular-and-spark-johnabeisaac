@@ -32,7 +32,7 @@ describe('Todo list', () => {
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeAnOwner("barry");
-    expect(page.getUniqueTodo("homework")).toEqual("Barry");
+    expect(page.getUniqueTodo("588959856f0b82ee93cd93eb")).toEqual("Barry");
     page.backspace();
 
   });
@@ -49,25 +49,22 @@ describe('Todo list', () => {
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeAStatus("incomplete")
-    expect(page.getUniqueTodo("video games")).toEqual("Fry");
+    expect(page.getUniqueTodo("58895985ee4964bdc668bd9e")).toEqual("Fry");
     page.backspace();
   });
 
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeABody("Incididunt enim ea sit qui")
-    expect(page.getUniqueTodo("software design")).toEqual("Incididunt enim ea sit qui esse magna eu. Nisi sunt exercitation est Lorem consectetur incididunt cupidatat laboris commodo veniam do ut sint.");
+    expect(page.getUniqueTodo("58895985186754887e0381f5")).toEqual("Blanche.");
     page.backspace();
   });
 
 
 
 
-  expect(page.getUniqueTodo("stokesclayton@momentia.com")).toEqual("Stokes Clayton");
-
-    expect(page.getUniqueTodo("merrillparker@escenta.com")).toEqual("Merrill Parker");
 
   });
-//});
+
 
 
