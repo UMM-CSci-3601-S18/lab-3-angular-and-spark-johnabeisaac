@@ -62,9 +62,9 @@ export class TodoPage {
   }
 
 
-  getUniqueTodo(category:string) {
-    let todo = element(by.id(category)).getText();
-    this.highlightElement(by.id(category));
+  getUniqueTodo(id:string) {
+    let todo = element(by.id(id)).getText();
+    this.highlightElement(by.id(id));
 
     return todo;
   }

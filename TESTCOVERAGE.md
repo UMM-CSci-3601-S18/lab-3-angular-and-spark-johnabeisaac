@@ -1,0 +1,1 @@
+In our end to end tests we tested all of of our search bars(owner,category,status, and body). We ran into trouble when searching for a Unique item which we declared as the todo ID. We got help from KK and thought we fixed it correctly but it's still having problems searching for the unique item in the E2E tests.

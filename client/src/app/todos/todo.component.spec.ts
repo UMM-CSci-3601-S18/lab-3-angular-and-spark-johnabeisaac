@@ -58,7 +58,7 @@ describe('Todo component', () => {
   it('can retrieve Pat by Fry', () => {
     todoComponent.setId('588959856601f6a77b6a2862');
     expect(todoComponent.todo).toBeDefined();
-    expect(todoComponent.todo.category).toBe('Homework');
+    expect(todoComponent.todo.category).toBe('homework');
     expect(todoComponent.todo.owner).toBe('Fry');
   });
 

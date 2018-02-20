@@ -7,12 +7,12 @@ let origFn = browser.driver.controlFlow().execute;
 browser.driver.controlFlow().execute = function () {
   let args = arguments;
 
-  // queue 100ms wait between test
-  //This delay is only put here so that you can watch the browser do its' thing.
-  //If you're tired of it taking long you can remove this call
-  origFn.call(browser.driver.controlFlow(), function () {
-    return protractor.promise.delayed(100);
-  });
+  // // queue 100ms wait between test
+  // //This delay is only put here so that you can watch the browser do its' thing.
+  // //If you're tired of it taking long you can remove this call
+  // origFn.call(browser.driver.controlFlow(), function () {
+  //   return protractor.promise.delayed(100);
+  // });
 
   return origFn.apply(browser.driver.controlFlow(), args);
 };
@@ -32,7 +32,7 @@ describe('Todo list', () => {
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeAnOwner("barry");
-    expect(page.getUniqueTodo("Homework")).toEqual("Barry");
+    expect(page.getUniqueTodo("homework")).toEqual("Barry");
     page.backspace();
 
   });
@@ -40,7 +40,7 @@ describe('Todo list', () => {
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeACategory("home");
-    expect(page.getUniqueTodo("Homework")).toEqual("Barry");
+    expect(page.getUniqueTodo("58895985ea08e3fe6f31e42e")).toEqual("Barry");
     page.backspace();
   });
 
@@ -49,7 +49,7 @@ describe('Todo list', () => {
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeAStatus("incomplete")
-    expect(page.getUniqueTodo("Video games")).toEqual("Fry");
+    expect(page.getUniqueTodo("video games")).toEqual("Fry");
     page.backspace();
   });
 
