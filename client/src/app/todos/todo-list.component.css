@@ -1,0 +1,45 @@
+
+
+
+[layout-gt-sm="row"] {
+  background-color: lightsteelblue;
+}
+
+#todo-list-title {
+  font-size:250%;
+  font-family: fantasy;
+}
+
+
+.mat-card.mat-card{
+  margin: 0%;
+  background: none;
+}
+
+#addTodo {
+
+  max-width: 100%;
+}
+
+#list-title {
+  padding-right: 14px;
+}
+
+
+
+mat-panel-title.mat-expansion-panel-header-title{
+  font-size: 130%;
+}
+
+mat-expansion-panel {
+  background-color: navajowhite;
+  border-radius: 3px;
+}
+
+
+
+#title input {
+  width: 16%;
+  min-width: 100px;
+}
+

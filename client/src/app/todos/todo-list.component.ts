@@ -17,7 +17,7 @@ export class TodoListComponent implements OnInit {
 
   public todoOwner: string;
   public todoBody: string;
-  public todoId: string;
+  public todo_Id: string;
   public todoStatus: string;
   public todoCategory: string;
   // Inject the UserListService into this component.

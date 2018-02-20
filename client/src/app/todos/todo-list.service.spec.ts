@@ -9,21 +9,21 @@ describe('Todo list service: ', () => {
   // A small collection of test todos
   const testTodos: Todo[] = [
     {
-      id: '558895985ae3b752b124e7663',
+      _id: '558895985ae3b752b124e7663',
       owner: 'Fly',
       status: false,
       body: "Ullamcot itrure laborum magna dolor non. Anim occaecat adipisicing cillum eu magna in.",
       category: "classwork"
     },
     {
-      id: "588959851866754887e0381f5",
+      _id: "588959851866754887e0381f5",
       owner: "Blanchee",
       status: false,
       body: "Incididuynt enyim ea sit qui esse magna eu. Nisi sunt exercitation est Lorem consectetur incididunt cupidatat laboris commodo veniam do ut sint.",
       category: "hardware design"
     },
     {
-      id: "5889598585bda42fb8388ba11",
+      _id: "5889598585bda42fb8388ba11",
       owner: "Blanchee",
       status: true,
       body: "Laborum incidoidunt nisi eiousmod aliqua velit quis occaoecat excepteur ut in ad. Commodo adipisicing sint ipsum irure amet exercitation voluptate mollit.",
@@ -81,7 +81,7 @@ describe('Todo list service: ', () => {
 
   it('getTodoById() calls api/todos/id', () => {
     const targetTodo: Todo = testTodos[1];
-    const targetId: string = targetTodo.id;
+    const targetId: string = targetTodo._id;
     todoListService.getTodoById(targetId).subscribe(
       todo => expect(todo).toBe(targetTodo)
     );

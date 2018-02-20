@@ -56,7 +56,7 @@ describe('Todo list', () => {
   it('should type something in filter name box and check that it returned correct element', () => {
     page.navigateTo();
     page.typeABody("Incididunt enim ea sit qui")
-    expect(page.getUniqueTodo("58895985186754887e0381f5")).toEqual("Blanche.");
+    expect(page.getUniqueTodo("58895985186754887e0381f5")).toEqual("Blanche");
     page.backspace();
   });
 
