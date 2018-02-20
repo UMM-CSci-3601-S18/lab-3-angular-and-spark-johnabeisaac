@@ -34,8 +34,7 @@ describe('Todo list', () => {
     page.typeAnOwner("barry");
     expect(page.getUniqueTodo("Homework")).toEqual("Barry");
     page.backspace();
-    page.typeAStatus("f")
-    expect(page.getUniqueTodo("Video games")).toEqual("Fry");
+
   });
 
   it('should type something in filter name box and check that it returned correct element', () => {
@@ -43,14 +42,28 @@ describe('Todo list', () => {
     page.typeACategory("home");
     expect(page.getUniqueTodo("Homework")).toEqual("Barry");
     page.backspace();
-    page.typeABody("Proident cupidatat")
-    expect(page.getUniqueTodo("Proident cupidatat exercitation id ullamco magna do qui aliquip id. Eiusmod labore non nostrud culpa duis incididunt incididunt esse occaecat amet officia.")).toEqual("Workman");
+  });
+
+
+
+  it('should type something in filter name box and check that it returned correct element', () => {
+    page.navigateTo();
+    page.typeAStatus("incomplete")
+    expect(page.getUniqueTodo("Video games")).toEqual("Fry");
+    page.backspace();
+  });
+
+  it('should type something in filter name box and check that it returned correct element', () => {
+    page.navigateTo();
+    page.typeABody("Incididunt enim ea sit qui")
+    expect(page.getUniqueTodo("software design")).toEqual("Incididunt enim ea sit qui esse magna eu. Nisi sunt exercitation est Lorem consectetur incididunt cupidatat laboris commodo veniam do ut sint.");
+    page.backspace();
   });
 
 
 
 
-    expect(page.getUniqueTodo("stokesclayton@momentia.com")).toEqual("Stokes Clayton");
+  expect(page.getUniqueTodo("stokesclayton@momentia.com")).toEqual("Stokes Clayton");
 
     expect(page.getUniqueTodo("merrillparker@escenta.com")).toEqual("Merrill Parker");
 

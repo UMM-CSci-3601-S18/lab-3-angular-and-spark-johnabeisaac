@@ -19,21 +19,21 @@ describe('Todo component', () => {
     todoListServiceStub = {
       getTodoById: (todoId: string) => Observable.of([
         {
-          _id: "588959856601f6a77b6a2862",
+          id: "588959856601f6a77b6a2862",
           owner: "Fry",
           status: false,
           body: "Sunt esse dolore sunt Lorem velit reprehenderit incididunt minim Lorem sint Lorem sit voluptate proident. Veniam voluptate veniam aliqua ipsum cupidatat.",
           category: "homework"
         },
         {
-          _id: "58895985847a6c1445ec4048",
+          id: "58895985847a6c1445ec4048",
           owner: "Barry",
           status: true,
           body: "Deserunt velit reprehenderit deserunt sunt excepteur sit eu eiusmod in voluptate aute minim mollit. Esse aliqua esse officia do proident non consequat non mollit.",
           category: "homework"
         },
         {
-          _id: "58895985e9aaeaad6292df39",
+          id: "58895985e9aaeaad6292df39",
           owner: "Dawn",
           status: true,
           body: "Magna exercitation pariatur in labore. Voluptate adipisicing reprehenderit dolor veniam dolore amet duis anim nisi.",
